@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: yuapi-backend
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/API
+    username: root
+    password: chen1213
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+yuapi:
+  client:
+    access-key: yupi
+    secret-key: abcdefgh
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: 57578
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
