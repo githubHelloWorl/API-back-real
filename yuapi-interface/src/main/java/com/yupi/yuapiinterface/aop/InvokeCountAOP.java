@@ -20,46 +20,20 @@ import javax.annotation.Resource;
 public class InvokeCountAOP {
 
     @DubboReference
-    private InnerUserInterfaceInfoService interfaceInfoService;
+    private InnerUserInterfaceInfoService userInterfaceInfoService;
 
     /**
      * 执行拦截
      */
     @Around("execution(* com.yupi.yuapiinterface.controller.*.*(..))")
     public Object doInterceptor(ProceedingJoinPoint point) throws Throwable {
-        // 计时
-//        StopWatch stopWatch = new StopWatch();
-//        stopWatch.start();
-        // 获取请求路径
-//        RequestAttributes requestAttributes = RequestContextHolder.currentRequestAttributes();
-//        HttpServletRequest httpServletRequest = ((ServletRequestAttributes) requestAttributes).getRequest();
-//
-//        HttpServletRequest request = httpServletRequest;
-//
-//        // 生成请求唯一 id
-//        String requestId = UUID.randomUUID().toString();
-//        String url = httpServletRequest.getRequestURI();
-//        // 获取请求参数
-//        Object[] args = point.getArgs();
-//        String reqParam = "[" + StringUtils.join(args, ", ") + "]";
-//        // 输出请求日志
-//        log.info("request start，id: {}, path: {}, ip: {}, params: {}", requestId, url,
-//                httpServletRequest.getRemoteHost(), reqParam);
-
         System.out.println("判断调用次数");
-        // todo 执行前 - 是否还有调用次数
-//        interfaceInfoService.invokeCount();
 
         // 执行原方法
         Object result = point.proceed();
 
         // 执行后
-
-
-        // 输出响应日志
-//        stopWatch.stop();
-//        long totalTimeMillis = stopWatch.getTotalTimeMillis();
-//        log.info("request end, id: {}, cost: {}ms", requestId, totalTimeMillis);
+//        userInterfaceInfoService.invokeCount();
         return result;
     }
 

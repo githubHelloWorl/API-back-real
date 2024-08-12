@@ -18,9 +18,8 @@ spring:
   # redis 配置
   redis:
     port: 6379
-    host: 121.41.56.218
+    host: localhost
     database: 0
-    password: redi1213
 server:
   port: 7529
   servlet:
